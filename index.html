@@ -325,6 +325,10 @@
         document.documentElement.classList.remove('dark');
         document.getElementById('tooltip-theme-text').innerHTML = "Thème sombre";
         }
+        if ('ontouchstart' in window || navigator.maxTouchPoints) {
+            document.getElementById('theme-toggle').removeAttribute('data-tooltip-target');
+            document.getElementById('theme-toggle').removeAttribute('data-tooltip-placement');
+        }
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
