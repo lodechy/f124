@@ -190,8 +190,8 @@ document.getElementById('totalRoundNb').innerText = totalRaces;
     `;
 
     const badgeSprint = `
-      <span class="bg-gray-50 text-gray-800 text-2xs ms-2 px-1 rounded-sm dark:bg-gray-700 dark:text-gray-300 block sm:hidden">S</span>
-      <span class="bg-gray-50 text-gray-800 text-xs font-medium ms-2 px-1.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-gray-300 hidden sm:block">Sprint</span>
+      <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-sm text-2xs ms-2 px-1 block sm:hidden">S</span>
+      <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-sm text-xs font-medium ms-2 px-1.5 py-0.5 hidden sm:block">Sprint</span>
     `;
 
     tableBody.innerHTML = '';
