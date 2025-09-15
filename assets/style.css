@@ -12,6 +12,18 @@ body {
   font-size: 0.625rem;
 }
 
+.xs\:flex-wrap {
+  @media (width < 420px) {
+    flex-wrap: wrap;
+  }
+}
+
+.xs\:w-auto {
+  @media (width >= 420px) {
+    width: auto;
+  }
+}
+
 .font-opacity-25 {
   color: #00000060;
   &:is(.dark *) {
