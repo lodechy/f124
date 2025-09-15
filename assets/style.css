@@ -8,6 +8,10 @@ body {
   object-fit: contain;
 }
 
+.text-2xs {
+  font-size: 0.625rem;
+}
+
 .font-opacity-25 {
   color: #00000060;
   &:is(.dark *) {

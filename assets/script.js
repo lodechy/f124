@@ -175,11 +175,11 @@ document.getElementById('totalRoundNb').innerText = totalRaces;
                <th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-small" scope="col">Pts.</th><th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-large" scope="col">Points</th>
                <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
                <th class="px-4 py-3 text-center table-cell-small" scope="col">Pts.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Points</th>`
-            : `<th class="px-4 py-3 border-e border-gray-200 dark:border-gray-700 w-1" scope="col">Grand Prix</th>
-               <th class="px-4 py-3 text-center" scope="col">Position</th>
-               <th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700" scope="col">Temps</th>
-               <th class="px-4 py-3 text-center" scope="col">Position</th>
-               <th class="px-4 py-3 text-center" scope="col">Temps</th>`
+            : `<th class="px-4 py-3 border-e border-gray-200 dark:border-gray-700 w-1 table-cell-small" scope="col">GP</th><th class="px-4 py-3 border-e border-gray-200 dark:border-gray-700 w-1 table-cell-large" scope="col">Grand Prix</th>
+            <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
+            <th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-small" scope="col">Tps.</th><th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-large" scope="col">Temps</th>
+            <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
+            <th class="px-4 py-3 text-center table-cell-small" scope="col">Tps.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Temps</th>`
         }      
     `;
 
@@ -190,7 +190,7 @@ document.getElementById('totalRoundNb').innerText = totalRaces;
     `;
 
     const badgeSprint = `
-      <span class="bg-gray-50 text-gray-800 text-xs font-medium ms-2 px-1.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-gray-300 block sm:hidden">S</span>
+      <span class="bg-gray-50 text-gray-800 text-2xs ms-2 px-1 rounded-sm dark:bg-gray-700 dark:text-gray-300 block sm:hidden">S</span>
       <span class="bg-gray-50 text-gray-800 text-xs font-medium ms-2 px-1.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-gray-300 hidden sm:block">Sprint</span>
     `;
 
