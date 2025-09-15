@@ -56,6 +56,7 @@ const data = [
 ];
 const lastRace = data.findLast((item => item.date));
 const nextRace = data.find((item => !item.date));
+const liveSpan = `<span class="ms-2 px-1 py-0.5 text-white text-xs bg-red-700 rounded-sm">LIVE</span>`;
 const pictureUrlGauvain = 'https://static-cdn.jtvnw.net/jtv_user_pictures/b83e513b-decf-41c9-8f28-aa40b75ec651-profile_image-150x150.png';
 const pictureUrlGalahad = 'https://static-cdn.jtvnw.net/jtv_user_pictures/f4fac690-84cb-4aa7-a515-70c90dc14675-profile_image-150x150.png';
 const twitchChannelGauvain = 'gau20_';
@@ -68,6 +69,8 @@ let filteredData = [...data];
 let nbSprint = 0;
 let championshipPointsGauvain = 0;
 let championshipPointsGalahad = 0;
+let isLiveGauvainSpan = ``;
+let isLiveGalahadSpan = ``;
 let nbRaceDone = 0;
 let totalRaces = 0;
 const raceDonePercent = nbRaceDone / totalRaces * 100;
@@ -112,20 +115,62 @@ themeToggleBtn.addEventListener('click', function() {
     }
 });
 
+async function isChannelLive(channelName) {
+    const url = 'https://gql.twitch.tv/gql';
+    const headers = {
+        'Client-ID': 'kimne78kx3ncx6brgo4mv6wki5h1ko',
+        'Content-Type': 'application/json',
+    };
+    const body = JSON.stringify([{
+        operationName: 'VideoPlayerStatusOverlayChannel',
+        query: 'query VideoPlayerStatusOverlayChannel($channel: String!) { user(login: $channel) { id stream { id type __typename } __typename }}',
+        variables: { channel: channelName },
+    }]);
+  
+    const response = await fetch(url, { method: 'POST', headers, body });
+    const json = await response.json();
+    const stream = json[0]?.data?.user?.stream;
+    if (stream && stream.type === 'live' && stream.__typename === 'Stream') {
+        return { live: true, type: stream.type };
+    } else {
+        return { live: false };
+    }
+}
+
+async function checkLiveStatusAndRender() {
+    try {
+        await Promise.all([
+            isChannelLive(twitchChannelGauvain).then(status => {
+                if (status.live) {
+                    isLiveGauvainSpan = liveSpan;
+                }
+            }),
+            isChannelLive(twitchChannelGalahad).then(status => {
+                if (status.live) {
+                    isLiveGalahadSpan = liveSpan;
+                }
+            })
+        ]);
+        renderChampionshipStanding();
+    } catch (err) {
+        console.error(err);
+    }
+}
+checkLiveStatusAndRender();
+
 goToDatatable.addEventListener("click", () => {
     document.querySelector('#datatable').scrollIntoView({
         behavior: 'smooth',
         block: "start"
     });
 });
+
 goToCharts.addEventListener("click", () => {
     document.querySelector('#charts').scrollIntoView({
         behavior: 'smooth',
         block: "start"
     });
 });
-
-
 
 data.forEach((item) => {
     if (item.gp_name.includes('Sprint')) nbSprint++;
@@ -136,8 +181,6 @@ data.forEach((item) => {
         if (!item.gp_name.includes('Sprint')) nbRaceDone++;
     }
 });
-
-
 
 function animateValue(id, start, end, duration) {
     const obj = document.getElementById(id);
@@ -384,41 +427,44 @@ renderTable();
 
 // CHAMPIONSHIP STANDING
 
-if (championshipPointsGauvain >= championshipPointsGalahad) {
-    renderChampionshipStanding(pictureUrlGauvain, "Gauvain", twitchChannelGauvain);
-    renderChampionshipStanding(pictureUrlGalahad, "Galahad", twitchChannelGalahad);
-} else {
-    renderChampionshipStanding(pictureUrlGalahad, "Galahad", twitchChannelGalahad);
-    renderChampionshipStanding(pictureUrlGauvain, "Gauvain", twitchChannelGauvain);
+function renderChampionshipStanding() {
+    if (championshipPointsGauvain >= championshipPointsGalahad) {
+        renderChampionshipItem(pictureUrlGauvain, "Gauvain", twitchChannelGauvain);
+        renderChampionshipItem(pictureUrlGalahad, "Galahad", twitchChannelGalahad);
+    } else {
+        renderChampionshipItem(pictureUrlGalahad, "Galahad", twitchChannelGalahad);
+        renderChampionshipItem(pictureUrlGauvain, "Gauvain", twitchChannelGauvain);
+    }
+    animateValue("championshipPointsGauvain", 0, championshipPointsGauvain, 1000);
+    animateValue("championshipPointsGalahad", 0, championshipPointsGalahad, 1000);
 }
-animateValue("championshipPointsGauvain", 0, championshipPointsGauvain, 1000);
-animateValue("championshipPointsGalahad", 0, championshipPointsGalahad, 1000);
 
-function renderChampionshipStanding(pictureUrl, name, twitchChannel) {
+function renderChampionshipItem(pictureUrl, name, twitchChannel) {
     const li = document.createElement('li');
     if (championshipStanding.children.length === 0) li.classList = `py-3 sm:py-4`;
     else li.classList = `pt-3 sm:pt-4`;
     li.innerHTML = `
-    <div class="flex items-center">
-      <div class="shrink-0">
-          <img class="w-12 h-12 rounded-full" src="${pictureUrl}" alt="Photo de profil de ${name}">
-      </div>
-      <div class="flex-1 min-w-0 ms-4">
-          <p class="text-base font-medium text-gray-900 truncate dark:text-white sm:text-lg">${name}</p>
-          <a href="https://www.twitch.tv/${twitchChannel}" target="_blank" class="text-sm text-gray-500 truncate dark:text-gray-400 hover:underline underline-offset-3">twitch.tv/${twitchChannel}</a>
-      </div>
-      <div class="inline-flex items-center text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
-      <span id="championshipPoints${name}"></span> 
-      ${ (name === "Gauvain" && championshipPointsGauvain < 2) || (name === "Galahad" && championshipPointsGalahad < 2)
-        ? `<span class="hidden sm:block md:hidden lg:block">point</span><span class="block sm:hidden md:block lg:hidden">pt</span>`
-        : `<span class="hidden sm:block md:hidden lg:block">points</span><span class="block sm:hidden md:block lg:hidden">pts</span>`
-       }
-      </div>
-    </div>
-  `;
+        <div class="flex items-center">
+            <div class="shrink-0">
+                <img class="w-12 h-12 rounded-full" src="${pictureUrl}" alt="Photo de profil de ${name}">
+            </div>
+            <div class="flex-1 min-w-0 ms-4">
+                <p class="flex items-center text-base font-medium text-gray-900 truncate dark:text-white sm:text-lg">
+                    ${name}${ (name === "Gauvain") ? isLiveGauvainSpan : isLiveGalahadSpan }
+                </p>
+                <a href="https://www.twitch.tv/${twitchChannel}" target="_blank" class="text-sm text-gray-500 truncate dark:text-gray-400 hover:underline underline-offset-3">twitch.tv/${twitchChannel}</a>
+            </div>
+            <div class="inline-flex items-center text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
+                <span id="championshipPoints${name}"></span> 
+                ${ (name === "Gauvain" && championshipPointsGauvain < 2) || (name === "Galahad" && championshipPointsGalahad < 2)
+                    ? `<span class="hidden sm:block md:hidden lg:block">point</span><span class="block sm:hidden md:block lg:hidden">pt</span>`
+                    : `<span class="hidden sm:block md:hidden lg:block">points</span><span class="block sm:hidden md:block lg:hidden">pts</span>`
+                }
+            </div>
+        </div>
+    `;
     championshipStanding.appendChild(li);
 }
-
 
 
 
