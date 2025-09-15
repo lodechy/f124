@@ -17,6 +17,8 @@ const toggleSprint = document.getElementById('toggleSprint');
 const toggleNotDone = document.getElementById('toggleNotDone');
 const swiperDiv = document.getElementById('swiper');
 const championshipStanding = document.getElementById('championshipStanding');
+const chartRacesDiv = document.getElementById('chart-races');
+const chartChampionshipDiv = document.getElementById('chart-championship');
 
 // const points = [0, 1, 2, 4, 6, 8, 10, 12, 15, 18, 25];
 const data = [
@@ -209,7 +211,9 @@ document.getElementById('toggleNotDoneValue').innerText = `(${totalRaces - nbRac
 document.getElementById('totalRoundNb').innerText = totalRaces;
 
 const renderTable = () => {
-    // Filtrer les Sprints si nécessaire
+
+    document.getElementById('table-loading').remove();
+
     let displayData = filteredData.filter(item => (toggleSprint.checked || !item.gp_name.includes('Sprint')) && (toggleNotDone.checked || item.date));
 
     const start = (currentPage - 1) * rowsPerPage;
@@ -217,33 +221,32 @@ const renderTable = () => {
     const pageData = displayData.slice(start, end);
 
     tableHead.innerHTML = `
-        ${
-            currentView === 'course'
+        ${ currentView === 'course'
             ? `<th class="px-4 py-3 border-e border-gray-200 dark:border-gray-700 w-1 table-cell-small" scope="col">GP</th><th class="px-4 py-3 border-e border-gray-200 dark:border-gray-700 w-1 table-cell-large" scope="col">Grand Prix</th>
-               <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
-               <th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-small" scope="col">Pts.</th><th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-large" scope="col">Points</th>
-               <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
-               <th class="px-4 py-3 text-center table-cell-small" scope="col">Pts.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Points</th>`
+                <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
+                <th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-small" scope="col">Pts.</th><th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-large" scope="col">Points</th>
+                <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
+                <th class="px-4 py-3 text-center table-cell-small" scope="col">Pts.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Points</th>`
             : `<th class="px-4 py-3 border-e border-gray-200 dark:border-gray-700 w-1 table-cell-small" scope="col">GP</th><th class="px-4 py-3 border-e border-gray-200 dark:border-gray-700 w-1 table-cell-large" scope="col">Grand Prix</th>
-            <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
-            <th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-small" scope="col">Tps.</th><th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-large" scope="col">Temps</th>
-            <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
-            <th class="px-4 py-3 text-center table-cell-small" scope="col">Tps.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Temps</th>`
+                <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
+                <th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-small" scope="col">Tps.</th><th class="px-4 py-3 text-center border-e border-gray-200 dark:border-gray-700 table-cell-large" scope="col">Temps</th>
+                <th class="px-4 py-3 text-center table-cell-small" scope="col">Pos.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Position</th>
+                <th class="px-4 py-3 text-center table-cell-small" scope="col">Tps.</th><th class="px-4 py-3 text-center table-cell-large" scope="col">Temps</th>`
         }      
     `;
 
     tableHead2.innerHTML = `
-    <th class="px-4 pt-3 border-e border-gray-200 dark:border-gray-700" scope="col"></th>
-    <th class="px-4 pt-3 text-center border-e border-gray-200 dark:border-gray-700" scope="colgroup" colspan="2">Gauvain</th>
-    <th class="px-4 pt-3 text-center" scope="colgroup" colspan="2">Galahad</th>
+        <th class="px-4 pt-3 border-e border-gray-200 dark:border-gray-700" scope="col"></th>
+        <th class="px-4 pt-3 text-center border-e border-gray-200 dark:border-gray-700" scope="colgroup" colspan="2">Gauvain</th>
+        <th class="px-4 pt-3 text-center" scope="colgroup" colspan="2">Galahad</th>
     `;
 
     const badgeSprint = `
-      <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-sm text-2xs ms-2 px-1 block sm:hidden">S</span>
-      <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-sm text-xs font-medium ms-2 px-1.5 py-0.5 hidden sm:block">Sprint</span>
+        <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-sm text-2xs ms-2 px-1 block sm:hidden">S</span>
+        <span class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-sm text-xs font-medium ms-2 px-1.5 py-0.5 hidden sm:block">Sprint</span>
     `;
 
-    tableBody.innerHTML = '';
+    tableBody.innerHTML = ``;
 
     pageData.forEach((row, idx) => {
         const tr = document.createElement('tr');
@@ -428,6 +431,7 @@ renderTable();
 // CHAMPIONSHIP STANDING
 
 function renderChampionshipStanding() {
+    championshipStanding.innerHTML = ``;
     if (championshipPointsGauvain >= championshipPointsGalahad) {
         renderChampionshipItem(pictureUrlGauvain, "Gauvain", twitchChannelGauvain);
         renderChampionshipItem(pictureUrlGalahad, "Galahad", twitchChannelGalahad);
@@ -450,7 +454,7 @@ function renderChampionshipItem(pictureUrl, name, twitchChannel) {
             </div>
             <div class="flex-1 min-w-0 ms-4">
                 <p class="flex items-center text-base font-medium text-gray-900 truncate dark:text-white sm:text-lg">
-                    ${name}${ (name === "Gauvain") ? isLiveGauvainSpan : isLiveGalahadSpan }
+                    ${ name }${ (name === "Gauvain") ? isLiveGauvainSpan : isLiveGalahadSpan }
                 </p>
                 <a href="https://www.twitch.tv/${twitchChannel}" target="_blank" class="text-sm text-gray-500 truncate dark:text-gray-400 hover:underline underline-offset-3">twitch.tv/${twitchChannel}</a>
             </div>
@@ -470,6 +474,7 @@ function renderChampionshipItem(pictureUrl, name, twitchChannel) {
 
 // SCHEDULE CAROUSEL
 
+swiperDiv.innerHTML = ``;
 let displayData = filteredData.filter(item => !item.gp_name.includes('Sprint'));
 
 displayData.forEach((round, i) => {
@@ -883,9 +888,9 @@ const optionsChampionship = {
     }]
 };
 
-// Initialisation des graphiques
-const chartRaces = new ApexCharts(document.querySelector('#chart-races'), optionsRaces);
-const chartChampionship = new ApexCharts(document.querySelector('#chart-championship'), optionsChampionship);
-
+chartRacesDiv.innerHTML = ``;
+chartChampionshipDiv.innerHTML = ``;
+const chartRaces = new ApexCharts(chartRacesDiv, optionsRaces);
+const chartChampionship = new ApexCharts(chartChampionshipDiv, optionsChampionship);
 chartRaces.render();
 chartChampionship.render();

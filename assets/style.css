@@ -179,6 +179,10 @@ body {
     width: calc(var(--spacing) * 0.5);
 }
 
+.my-0\.5 {
+    margin-block: calc(var(--spacing) * 0.5);
+}
+
 html.dark {
     --swiper-pagination-bullet-inactive-color: #fff;
     --swiper-pagination-bullet-inactive-opacity: 0.15;
