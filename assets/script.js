@@ -20,39 +20,39 @@ const championshipStanding = document.getElementById('championshipStanding');
 
 // const points = [0, 1, 2, 4, 6, 8, 10, 12, 15, 18, 25];
 const data = [
-  { date: '01/09/2025', gp_flag: '🇧🇭', gp_name: 'Bahreïn', race_gauvain_pos: 19, race_gauvain_pts: 0, race_galahad_pos: 1, race_galahad_pts: 26, quali_gauvain_pos: 7, quali_gauvain_tps: '1:38.388', quali_galahad_pos: 1, quali_galahad_tps: '1:36.315', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Bahrain-carbon.png' },
-  { date: '05/09/2025', gp_flag: '🇸🇦', gp_name: 'Arabie Saoudite', race_gauvain_pos: 1, race_gauvain_pts: 26, race_galahad_pos: 5, race_galahad_pts: 10, quali_gauvain_pos: 1, quali_gauvain_tps: '1:35.877', quali_galahad_pos: 17, quali_galahad_tps: '1:39.913', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Saudi-Arabia-carbon.png' },
-  { date: '', gp_flag: '🇦🇺', gp_name: 'Australie', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Australie-carbon.png' },
-  { date: '', gp_flag: '🇯🇵', gp_name: 'Japon', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Japon-carbon.png' },
-  { date: '', gp_flag: '🇨🇳', gp_name: 'Chine (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2024/circuits/China_20carbon.png' },
-  { date: '', gp_flag: '🇨🇳', gp_name: 'Chine', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2024/circuits/China_20carbon.png' },
-  { date: '', gp_flag: '🇺🇸', gp_name: 'Miami (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Miami-carbon.png' },
-  { date: '', gp_flag: '🇺🇸', gp_name: 'Miami', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Miami-carbon.png' },
-  { date: '', gp_flag: '🇮🇹', gp_name: 'Imola', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Emilia-Romagna-carbon.png' },
-  { date: '', gp_flag: '🇲🇨', gp_name: 'Monaco', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: true, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Monte-Carlo-carbon.png' },
-  { date: '', gp_flag: '🇨🇦', gp_name: 'Canada', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Canada-carbon.png' },
-  { date: '', gp_flag: '🇪🇸', gp_name: 'Espagne', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2023/circuits/Spain-carbon-2023.png' },
-  { date: '', gp_flag: '🇦🇹', gp_name: 'Autriche (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Austria-carbon.png' },
-  { date: '', gp_flag: '🇦🇹', gp_name: 'Autriche', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Austria-carbon.png' },
-  { date: '', gp_flag: '🇬🇧', gp_name: 'Grande-Bretagne', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Great-Britain-carbon.png' },
-  { date: '', gp_flag: '🇭🇺', gp_name: 'Hongrie', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Hungar-carbon.png' },
-  { date: '', gp_flag: '🇧🇪', gp_name: 'Belgique', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: true, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Belgium-carbon.png' },
-  { date: '', gp_flag: '🇳🇱', gp_name: 'Pays-Bas', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Netherlands-carbon.png' },
-  { date: '', gp_flag: '🇮🇹', gp_name: 'Monza', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: true, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Italy-carbon.png' },
-  { date: '', gp_flag: '🇦🇿', gp_name: 'Azerbaïdjan', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Azerbaijan-carbon.png' },
-  { date: '', gp_flag: '🇸🇬', gp_name: 'Singapour', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2023/circuits/Singapore-carbon-2023.png' },
-  { date: '', gp_flag: '🇺🇸', gp_name: 'Texas (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/USA-carbon.png' },
-  { date: '', gp_flag: '🇺🇸', gp_name: 'Texas', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/USA-carbon.png' },
-  { date: '', gp_flag: '🇲🇽', gp_name: 'Mexique', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Mexico-carbon.png' },
-  { date: '', gp_flag: '🇧🇷', gp_name: 'Brésil (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Brazil-carbon.png' },
-  { date: '', gp_flag: '🇧🇷', gp_name: 'Brésil', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Brazil-carbon.png' },
-  { date: '', gp_flag: '🇺🇸', gp_name: 'Las Vegas', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/12/Las-Vegas-carbon-AR.png' },
-  { date: '', gp_flag: '🇶🇦', gp_name: 'Qatar (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/qatar-silhouette-ar.png' },
-  { date: '', gp_flag: '🇶🇦', gp_name: 'Qatar', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/qatar-silhouette-ar.png' },
-  { date: '', gp_flag: '🇦🇪', gp_name: 'Abu Dhabi', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2023/circuits/Abu_Dhab_carbon-post2021.png' },
-  { date: '', gp_flag: '🇵🇹', gp_name: 'Portugal', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Portugal-carbon.png' }
-  // Copies pour tester la pagination
-  // ...Array.from({ length: 23 }, (_, i) => ({ date: `0${(i % 9) + 1}/09/2025`, gp_flag: '🇫🇷', gp_name: `France ${i + 1}`, race_gauvain_pos: i % 20, race_gauvain_pts: points[Math.floor(Math.random() * points.length)], race_galahad_pos: (i % 5) + 1, race_galahad_pts: points[Math.floor(Math.random() * points.length)], quali_gauvain_pos: i % 10, quali_gauvain_tps: `1:3${i % 10}.456`, quali_galahad_pos: 1, quali_galahad_tps: `1:36.3${i % 10}${i % 9}`, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Portugal-carbon.png' }))
+    { date: '01/09/2025', gp_flag: '🇧🇭', gp_name: 'Bahreïn', race_gauvain_pos: 19, race_gauvain_pts: 0, race_galahad_pos: 1, race_galahad_pts: 26, quali_gauvain_pos: 7, quali_gauvain_tps: '1:38.388', quali_galahad_pos: 1, quali_galahad_tps: '1:36.315', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Bahrain-carbon.png' },
+    { date: '05/09/2025', gp_flag: '🇸🇦', gp_name: 'Arabie Saoudite', race_gauvain_pos: 1, race_gauvain_pts: 26, race_galahad_pos: 5, race_galahad_pts: 10, quali_gauvain_pos: 1, quali_gauvain_tps: '1:35.877', quali_galahad_pos: 17, quali_galahad_tps: '1:39.913', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Saudi-Arabia-carbon.png' },
+    { date: '', gp_flag: '🇦🇺', gp_name: 'Australie', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Australie-carbon.png' },
+    { date: '', gp_flag: '🇯🇵', gp_name: 'Japon', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Japon-carbon.png' },
+    { date: '', gp_flag: '🇨🇳', gp_name: 'Chine (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2024/circuits/China_20carbon.png' },
+    { date: '', gp_flag: '🇨🇳', gp_name: 'Chine', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2024/circuits/China_20carbon.png' },
+    { date: '', gp_flag: '🇺🇸', gp_name: 'Miami (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Miami-carbon.png' },
+    { date: '', gp_flag: '🇺🇸', gp_name: 'Miami', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Miami-carbon.png' },
+    { date: '', gp_flag: '🇮🇹', gp_name: 'Imola', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Emilia-Romagna-carbon.png' },
+    { date: '', gp_flag: '🇲🇨', gp_name: 'Monaco', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: true, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Monte-Carlo-carbon.png' },
+    { date: '', gp_flag: '🇨🇦', gp_name: 'Canada', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/02/Canada-carbon.png' },
+    { date: '', gp_flag: '🇪🇸', gp_name: 'Espagne', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2023/circuits/Spain-carbon-2023.png' },
+    { date: '', gp_flag: '🇦🇹', gp_name: 'Autriche (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Austria-carbon.png' },
+    { date: '', gp_flag: '🇦🇹', gp_name: 'Autriche', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Austria-carbon.png' },
+    { date: '', gp_flag: '🇬🇧', gp_name: 'Grande-Bretagne', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Great-Britain-carbon.png' },
+    { date: '', gp_flag: '🇭🇺', gp_name: 'Hongrie', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Hungar-carbon.png' },
+    { date: '', gp_flag: '🇧🇪', gp_name: 'Belgique', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: true, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Belgium-carbon.png' },
+    { date: '', gp_flag: '🇳🇱', gp_name: 'Pays-Bas', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Netherlands-carbon.png' },
+    { date: '', gp_flag: '🇮🇹', gp_name: 'Monza', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: true, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Italy-carbon.png' },
+    { date: '', gp_flag: '🇦🇿', gp_name: 'Azerbaïdjan', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Azerbaijan-carbon.png' },
+    { date: '', gp_flag: '🇸🇬', gp_name: 'Singapour', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2023/circuits/Singapore-carbon-2023.png' },
+    { date: '', gp_flag: '🇺🇸', gp_name: 'Texas (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/USA-carbon.png' },
+    { date: '', gp_flag: '🇺🇸', gp_name: 'Texas', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/USA-carbon.png' },
+    { date: '', gp_flag: '🇲🇽', gp_name: 'Mexique', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Mexico-carbon.png' },
+    { date: '', gp_flag: '🇧🇷', gp_name: 'Brésil (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Brazil-carbon.png' },
+    { date: '', gp_flag: '🇧🇷', gp_name: 'Brésil', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Brazil-carbon.png' },
+    { date: '', gp_flag: '🇺🇸', gp_name: 'Las Vegas', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2022/12/Las-Vegas-carbon-AR.png' },
+    { date: '', gp_flag: '🇶🇦', gp_name: 'Qatar (Sprint)', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/qatar-silhouette-ar.png' },
+    { date: '', gp_flag: '🇶🇦', gp_name: 'Qatar', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/qatar-silhouette-ar.png' },
+    { date: '', gp_flag: '🇦🇪', gp_name: 'Abu Dhabi', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/uploads/image/2023/circuits/Abu_Dhab_carbon-post2021.png' },
+    { date: '', gp_flag: '🇵🇹', gp_name: 'Portugal', race_gauvain_pos: '', race_gauvain_pts: '', race_galahad_pos: '', race_galahad_pts: '', quali_gauvain_pos: '', quali_gauvain_tps: '', quali_galahad_pos: '', quali_galahad_tps: '', legendary: false, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Portugal-carbon.png' }
+    // Copies pour tester la pagination
+    // ...Array.from({ length: 23 }, (_, i) => ({ date: `0${(i % 9) + 1}/09/2025`, gp_flag: '🇫🇷', gp_name: `France ${i + 1}`, race_gauvain_pos: i % 20, race_gauvain_pts: points[Math.floor(Math.random() * points.length)], race_galahad_pos: (i % 5) + 1, race_galahad_pts: points[Math.floor(Math.random() * points.length)], quali_gauvain_pos: i % 10, quali_gauvain_tps: `1:3${i % 10}.456`, quali_galahad_pos: 1, quali_galahad_tps: `1:36.3${i % 10}${i % 9}`, gp_map: 'https://aurupteur.com/wp-content/uploads/2021/09/Portugal-carbon.png' }))
 ];
 const lastRace = data.findLast((item => item.date));
 const nextRace = data.find((item => !item.date));
@@ -98,7 +98,7 @@ themeToggleBtn.addEventListener('click', function() {
             localStorage.setItem('color-theme', 'light');
         }
 
-    // if NOT set via local storage previously
+        // if NOT set via local storage previously
     } else {
         if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark');
@@ -109,47 +109,53 @@ themeToggleBtn.addEventListener('click', function() {
             themeToggleBtnTooltip.innerHTML = 'Thème sombre';
             localStorage.setItem('color-theme', 'dark');
         }
-    }    
+    }
 });
 
 goToDatatable.addEventListener("click", () => {
-  document.querySelector('#datatable').scrollIntoView({ behavior: 'smooth', block: "start" });
+    document.querySelector('#datatable').scrollIntoView({
+        behavior: 'smooth',
+        block: "start"
+    });
 });
 goToCharts.addEventListener("click", () => {
-  document.querySelector('#charts').scrollIntoView({ behavior: 'smooth', block: "start" });
+    document.querySelector('#charts').scrollIntoView({
+        behavior: 'smooth',
+        block: "start"
+    });
 });
 
 
 
 data.forEach((item) => {
-  if (item.gp_name.includes('Sprint')) nbSprint++;
-  else totalRaces++;
-  if (item.date) {
-    championshipPointsGauvain += item.race_gauvain_pts;
-    championshipPointsGalahad += item.race_galahad_pts;
-    if (!item.gp_name.includes('Sprint')) nbRaceDone++;
-  }
+    if (item.gp_name.includes('Sprint')) nbSprint++;
+    else totalRaces++;
+    if (item.date) {
+        championshipPointsGauvain += item.race_gauvain_pts;
+        championshipPointsGalahad += item.race_galahad_pts;
+        if (!item.gp_name.includes('Sprint')) nbRaceDone++;
+    }
 });
 
 
 
 function animateValue(id, start, end, duration) {
-  const obj = document.getElementById(id);
-  if (start >= end) {
-    obj.innerHTML = end;
-    return;
-  }
-  const range = end - start;
-  var current = start;
-  const increment = end > start ? 1 : -1;
-  const stepTime = Math.abs(Math.floor(duration / range));
-  const timer = setInterval(function() {
-      current += increment;
-      obj.innerHTML = current;
-      if (current == end) {
-          clearInterval(timer);
-      }
-  }, stepTime);
+    const obj = document.getElementById(id);
+    if (start >= end) {
+        obj.innerHTML = end;
+        return;
+    }
+    const range = end - start;
+    var current = start;
+    const increment = end > start ? 1 : -1;
+    const stepTime = Math.abs(Math.floor(duration / range));
+    const timer = setInterval(function() {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, stepTime);
 }
 
 
@@ -159,7 +165,7 @@ document.getElementById('toggleSprintValue').innerText = `(${nbSprint})`;
 document.getElementById('toggleNotDoneValue').innerText = `(${totalRaces - nbRaceDone})`;
 document.getElementById('totalRoundNb').innerText = totalRaces;
 
-  const renderTable = () => {
+const renderTable = () => {
     // Filtrer les Sprints si nécessaire
     let displayData = filteredData.filter(item => (toggleSprint.checked || !item.gp_name.includes('Sprint')) && (toggleNotDone.checked || item.date));
 
@@ -197,11 +203,11 @@ document.getElementById('totalRoundNb').innerText = totalRaces;
     tableBody.innerHTML = '';
 
     pageData.forEach((row, idx) => {
-      const tr = document.createElement('tr');
-      tr.classList = `text-gray-900 whitespace-nowrap dark:text-white`;
-      if (idx % 2 !== 0) tr.classList.add('bg-gray-100/40', 'dark:bg-gray-900/40');
-      if (!row.date) tr.classList.add('font-opacity-25');
-      tr.innerHTML = `
+        const tr = document.createElement('tr');
+        tr.classList = `text-gray-900 whitespace-nowrap dark:text-white`;
+        if (idx % 2 !== 0) tr.classList.add('bg-gray-100/40', 'dark:bg-gray-900/40');
+        if (!row.date) tr.classList.add('font-opacity-25');
+        tr.innerHTML = `
         <td class="flex items-center px-4 py-2 font-medium">
           <span class="text-xl leading-tight">${row.gp_flag}</span>
           ${ row.gp_name.slice(-8) === "(Sprint)"
@@ -229,17 +235,17 @@ document.getElementById('totalRoundNb').innerText = totalRaces;
                <td class="p-2 font-medium text-center">${row.quali_galahad_tps !== '' ? row.quali_galahad_tps : '-'}</td>`
         }
       `;
-      tableBody.appendChild(tr);      
+        tableBody.appendChild(tr);
     });
 
     if (pageData.length < rowsPerPage) {
-      for (let i=pageData.length; i<rowsPerPage; i++) {
-        const tr = document.createElement('tr');
-        tr.classList = `text-gray-900 whitespace-nowrap dark:text-white font-opacity-25`;
-        if (i % 2 !== 0) tr.classList.add('bg-gray-100/40', 'dark:bg-gray-900/40');
-        tr.innerHTML = `<td class="flex items-center px-4 py-2 font-medium"><span class="text-xl leading-tight"> </span></td><td class="p-2 font-medium text-center border-l border-gray-200 dark:border-gray-700"> </td><td class="p-2 font-medium text-center border-r border-gray-200 dark:border-gray-700"> </td><td class="p-2 font-medium text-center"> </td><td class="p-2 font-medium text-center"> </td>`;
-        tableBody.appendChild(tr);
-      }
+        for (let i = pageData.length; i < rowsPerPage; i++) {
+            const tr = document.createElement('tr');
+            tr.classList = `text-gray-900 whitespace-nowrap dark:text-white font-opacity-25`;
+            if (i % 2 !== 0) tr.classList.add('bg-gray-100/40', 'dark:bg-gray-900/40');
+            tr.innerHTML = `<td class="flex items-center px-4 py-2 font-medium"><span class="text-xl leading-tight"> </span></td><td class="p-2 font-medium text-center border-l border-gray-200 dark:border-gray-700"> </td><td class="p-2 font-medium text-center border-r border-gray-200 dark:border-gray-700"> </td><td class="p-2 font-medium text-center"> </td><td class="p-2 font-medium text-center"> </td>`;
+            tableBody.appendChild(tr);
+        }
     }
 
     rangeStart.textContent = displayData.length ? start + 1 : 0;
@@ -247,70 +253,70 @@ document.getElementById('totalRoundNb').innerText = totalRaces;
     totalItems.textContent = displayData.length;
 
     renderPagination(displayData.length);
-  };
+};
 
-  const renderPagination = (nbRow) => {
+const renderPagination = (nbRow) => {
     const totalPages = Math.ceil(nbRow / rowsPerPage);
     pagination.innerHTML = "";
-  
+
     const createPageButton = (pageNum, active = false) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<span class="${active ? 'z-10 text-gray-900 bg-gray-100 border-gray-300 hover:bg-gray-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600' : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'} flex items-center justify-center text-sm w-9 h-9 leading-tight border dark:border-gray-700 cursor-pointer">${pageNum}</span>`;
-      li.addEventListener("click", (e) => {
-        e.preventDefault();
-        currentPage = pageNum;
-        renderTable();
-      });
-      pagination.appendChild(li);
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="${active ? 'z-10 text-gray-900 bg-gray-100 border-gray-300 hover:bg-gray-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600' : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'} flex items-center justify-center text-sm w-9 h-9 leading-tight border dark:border-gray-700 cursor-pointer">${pageNum}</span>`;
+        li.addEventListener("click", (e) => {
+            e.preventDefault();
+            currentPage = pageNum;
+            renderTable();
+        });
+        pagination.appendChild(li);
     };
-  
+
     // Previous Button
     const prev = document.createElement("li");
     prev.innerHTML = `<span class="flex items-center justify-center h-full w-9 h-9 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"><svg class="w-5 h-5" fill="currentColor"><path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"/></svg></span>`;
     prev.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (currentPage > 1) {
-        currentPage--;
-        renderTable();
-      }
+        e.preventDefault();
+        if (currentPage > 1) {
+            currentPage--;
+            renderTable();
+        }
     });
     pagination.appendChild(prev);
-  
+
     // Calcul des pages à afficher
     let startPage = Math.max(1, currentPage - 2);
     let endPage = Math.min(totalPages, currentPage + 2);
-  
+
     if (currentPage <= 3) {
-      endPage = Math.min(5, totalPages);
+        endPage = Math.min(5, totalPages);
     } else if (currentPage >= totalPages - 2) {
-      startPage = Math.max(totalPages - 4, 1);
+        startPage = Math.max(totalPages - 4, 1);
     }
-  
+
     // Affiche le premier bouton + ellipsis si besoin
     if (startPage > 1) {
-      createPageButton(1);
-      if (startPage > 2) {
-        const ellipsis = document.createElement("li");
-        ellipsis.innerHTML = `<span class="flex items-center justify-center text-sm w-9 h-9 leading-tight text-gray-500 bg-white border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">...</span>`;
-        pagination.appendChild(ellipsis);
-      }
+        createPageButton(1);
+        if (startPage > 2) {
+            const ellipsis = document.createElement("li");
+            ellipsis.innerHTML = `<span class="flex items-center justify-center text-sm w-9 h-9 leading-tight text-gray-500 bg-white border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">...</span>`;
+            pagination.appendChild(ellipsis);
+        }
     }
-  
+
     // Affiche les pages centrées autour de currentPage
     for (let i = startPage; i <= endPage; i++) {
-      createPageButton(i, i === currentPage);
+        createPageButton(i, i === currentPage);
     }
-  
+
     // Affiche ellipsis + dernier bouton si besoin
     if (endPage < totalPages) {
-      if (endPage < totalPages - 1) {
-        const ellipsis = document.createElement("li");
-        ellipsis.innerHTML = `<span class="flex items-center justify-center text-sm w-9 h-9 leading-tight text-gray-500 bg-white border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">...</span>`;
-        pagination.appendChild(ellipsis);
-      }
-      createPageButton(totalPages);
+        if (endPage < totalPages - 1) {
+            const ellipsis = document.createElement("li");
+            ellipsis.innerHTML = `<span class="flex items-center justify-center text-sm w-9 h-9 leading-tight text-gray-500 bg-white border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">...</span>`;
+            pagination.appendChild(ellipsis);
+        }
+        createPageButton(totalPages);
     }
-  
+
     // Next Button
     const next = document.createElement("li");
     next.innerHTML = `
@@ -321,76 +327,57 @@ document.getElementById('totalRoundNb').innerText = totalRaces;
       </span>
     `;
     next.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderTable();
-      }
+        e.preventDefault();
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderTable();
+        }
     });
     pagination.appendChild(next);
-  };
-  
+};
 
 
-  document.querySelectorAll('input[name="table-view"]').forEach(radio => {
+
+document.querySelectorAll('input[name="table-view"]').forEach(radio => {
     radio.addEventListener('change', e => {
-      currentView = e.target.value;
-      setFilteredData();
-      currentPage = 1;
-      renderTable();
+        currentView = e.target.value;
+        setFilteredData();
+        currentPage = 1;
+        renderTable();
     });
-  });
+});
 
-  searchInput.addEventListener('input', () => {
+searchInput.addEventListener('input', () => {
     setFilteredData();
     currentPage = 1;
     renderTable();
-  });
+});
 
-  const setFilteredData = () => {
+const setFilteredData = () => {
     const term = searchInput.value.toLowerCase();
-    currentView === 'course'
-      ? filteredData = data.filter(item => item.gp_name.toLowerCase().includes(term) || item.date.includes(term) || (item.race_gauvain_pos).toString().toLowerCase().includes(term) || (item.race_gauvain_pts).toString().toLowerCase().includes(term) || (item.race_galahad_pos).toString().toLowerCase().includes(term) || (item.race_galahad_pts).toString().toLowerCase().includes(term))
-      : filteredData = data.filter(item => item.gp_name.toLowerCase().includes(term) || item.date.includes(term) || (item.quali_gauvain_pos).toString().toLowerCase().includes(term) || (item.quali_gauvain_tps).toString().toLowerCase().includes(term) || (item.quali_galahad_pos).toString().toLowerCase().includes(term) || (item.quali_galahad_tps).toString().toLowerCase().includes(term))
-    ;
-  }
+    currentView === 'course' ?
+        filteredData = data.filter(item => item.gp_name.toLowerCase().includes(term) || item.date.includes(term) || (item.race_gauvain_pos).toString().toLowerCase().includes(term) || (item.race_gauvain_pts).toString().toLowerCase().includes(term) || (item.race_galahad_pos).toString().toLowerCase().includes(term) || (item.race_galahad_pts).toString().toLowerCase().includes(term)) :
+        filteredData = data.filter(item => item.gp_name.toLowerCase().includes(term) || item.date.includes(term) || (item.quali_gauvain_pos).toString().toLowerCase().includes(term) || (item.quali_gauvain_tps).toString().toLowerCase().includes(term) || (item.quali_galahad_pos).toString().toLowerCase().includes(term) || (item.quali_galahad_tps).toString().toLowerCase().includes(term));
+}
 
-  toggleSprint.addEventListener('change', () => {
+toggleSprint.addEventListener('change', () => {
     currentPage = 1;
     renderTable();
-  });
+});
 
-  toggleNotDone.addEventListener('change', () => {
+toggleNotDone.addEventListener('change', () => {
     currentPage = 1;
     renderTable();
-  });
+});
 
-  document.getElementById('rowsPerPageSelect').addEventListener('change', () => {
+document.getElementById('rowsPerPageSelect').addEventListener('change', () => {
     rowsPerPage = parseInt(rowsPerPageSelect.value, 10);
     currentPage = 1;
     renderTable();
-  });
+});
 
-  // Initial render
-  renderTable();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Initial render
+renderTable();
 
 
 
@@ -398,20 +385,20 @@ document.getElementById('totalRoundNb').innerText = totalRaces;
 // CHAMPIONSHIP STANDING
 
 if (championshipPointsGauvain >= championshipPointsGalahad) {
-  renderChampionshipStanding(pictureUrlGauvain, "Gauvain", twitchChannelGauvain);
-  renderChampionshipStanding(pictureUrlGalahad, "Galahad", twitchChannelGalahad);
+    renderChampionshipStanding(pictureUrlGauvain, "Gauvain", twitchChannelGauvain);
+    renderChampionshipStanding(pictureUrlGalahad, "Galahad", twitchChannelGalahad);
 } else {
-  renderChampionshipStanding(pictureUrlGalahad, "Galahad", twitchChannelGalahad);
-  renderChampionshipStanding(pictureUrlGauvain, "Gauvain", twitchChannelGauvain);
+    renderChampionshipStanding(pictureUrlGalahad, "Galahad", twitchChannelGalahad);
+    renderChampionshipStanding(pictureUrlGauvain, "Gauvain", twitchChannelGauvain);
 }
 animateValue("championshipPointsGauvain", 0, championshipPointsGauvain, 1000);
 animateValue("championshipPointsGalahad", 0, championshipPointsGalahad, 1000);
 
-function renderChampionshipStanding (pictureUrl, name, twitchChannel) {
-  const li = document.createElement('li');
-  if (championshipStanding.children.length === 0) li.classList = `py-3 sm:py-4`;
-  else li.classList = `pt-3 sm:pt-4`;
-  li.innerHTML = `
+function renderChampionshipStanding(pictureUrl, name, twitchChannel) {
+    const li = document.createElement('li');
+    if (championshipStanding.children.length === 0) li.classList = `py-3 sm:py-4`;
+    else li.classList = `pt-3 sm:pt-4`;
+    li.innerHTML = `
     <div class="flex items-center">
       <div class="shrink-0">
           <img class="w-12 h-12 rounded-full" src="${pictureUrl}" alt="Photo de profil de ${name}">
@@ -429,30 +416,8 @@ function renderChampionshipStanding (pictureUrl, name, twitchChannel) {
       </div>
     </div>
   `;
-  championshipStanding.appendChild(li);
+    championshipStanding.appendChild(li);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -463,11 +428,11 @@ let displayData = filteredData.filter(item => !item.gp_name.includes('Sprint'));
 
 displayData.forEach((round, i) => {
 
-  const slide = document.createElement('div');
-      slide.classList = 'swiper-slide';
-      if (round.date && displayData.findIndex(round => !round.date) !== -1) slide.classList.add('opacity-40');
+    const slide = document.createElement('div');
+    slide.classList = 'swiper-slide';
+    if (round.date && displayData.findIndex(round => !round.date) !== -1) slide.classList.add('opacity-40');
 
-      slide.innerHTML = `
+    slide.innerHTML = `
         <div class="flex items-start justify-center">
           ${ i === 0
             ? `<div class="flex w-full h-0.5"></div>`
@@ -506,40 +471,43 @@ displayData.forEach((round, i) => {
         <img class="px-16 mb-8 opacity-90" src="${round.gp_map}" alt="Circuit de ${round.gp_name}" />
       `;
 
-      swiperDiv.appendChild(slide);
+    swiperDiv.appendChild(slide);
 });
 
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  initialSlide: 0,
-  spaceBetween: 0,
-  centeredSlides: true,
-  resistance: false,
-  resistanceRatio: .85,
-  grabCursor: true,
-  slideToClickedSlide: true,
-  pagination: { el: ".swiper-pagination", clickable: true },
-  breakpoints: {
-    550: {
-      slidesPerView: 2,
-      centeredSlides: false
+    slidesPerView: 1,
+    initialSlide: 0,
+    spaceBetween: 0,
+    centeredSlides: true,
+    resistance: false,
+    resistanceRatio: .85,
+    grabCursor: true,
+    slideToClickedSlide: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
     },
-    768: {
-      slidesPerView: 3,
-      centeredSlides: true
+    breakpoints: {
+        550: {
+            slidesPerView: 2,
+            centeredSlides: false
+        },
+        768: {
+            slidesPerView: 3,
+            centeredSlides: true
+        },
+        // 1024: {
+        //   slidesPerView: 5,
+        //   spaceBetween: 50,
+        // },
     },
-    // 1024: {
-    //   slidesPerView: 5,
-    //   spaceBetween: 50,
-    // },
-  },
 });
 
 let slideIndex;
 if (displayData.findIndex(item => !item.date) > -1) {
-  slideIndex = displayData.findIndex(item => !item.date);
+    slideIndex = displayData.findIndex(item => !item.date);
 } else {
-  slideIndex = displayData.length - 1;
+    slideIndex = displayData.length - 1;
 }
 
 swiper.slideTo(slideIndex, 2000);
@@ -547,239 +515,203 @@ swiper.slideTo(slideIndex, 2000);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Données pour les graphiques
-    let gp_flags = [];
-    let gp_names = [];
-    let race_gauvain_pts = [];
-    let race_galahad_pts = [];
-    let lastIsSprint = false;
-    let last_sprint_gauvain_pts = 0;
-    let last_sprint_galahad_pts = 0;
+let gp_flags = [];
+let gp_names = [];
+let race_gauvain_pts = [];
+let race_galahad_pts = [];
+let lastIsSprint = false;
+let last_sprint_gauvain_pts = 0;
+let last_sprint_galahad_pts = 0;
 
-    data.forEach(item => {
-      if (item.date) {
-        if (!item.gp_name.includes('Sprint'))  {
-          if (!lastIsSprint) {
-            gp_flags.push(item.gp_flag);
-            gp_names.push(item.gp_flag + " " + item.gp_name + " | " + item.date);
-            race_gauvain_pts.push(item.race_gauvain_pts);
-            race_galahad_pts.push(item.race_galahad_pts);
-          } else {
+data.forEach(item => {
+    if (item.date) {
+        if (!item.gp_name.includes('Sprint')) {
+            if (!lastIsSprint) {
+                gp_flags.push(item.gp_flag);
+                gp_names.push(item.gp_flag + " " + item.gp_name + " | " + item.date);
+                race_gauvain_pts.push(item.race_gauvain_pts);
+                race_galahad_pts.push(item.race_galahad_pts);
+            } else {
+                gp_flags.push(item.gp_flag);
+                gp_names.push(item.gp_flag + " " + item.gp_name);
+                race_gauvain_pts.push(item.race_gauvain_pts + last_sprint_gauvain_pts);
+                race_galahad_pts.push(item.race_galahad_pts + last_sprint_galahad_pts);
+            }
+        } else {
+            lastIsSprint = true;
+            last_sprint_gauvain_pts = item.race_gauvain_pts;
+            last_sprint_galahad_pts = item.race_galahad_pts;
+        };
+    } else {
+        if (!item.gp_name.includes('Sprint')) {
             gp_flags.push(item.gp_flag);
             gp_names.push(item.gp_flag + " " + item.gp_name);
-            race_gauvain_pts.push(item.race_gauvain_pts+last_sprint_gauvain_pts);
-            race_galahad_pts.push(item.race_galahad_pts+last_sprint_galahad_pts);
-          }
-        } else {
-          lastIsSprint = true;
-          last_sprint_gauvain_pts = item.race_gauvain_pts;
-          last_sprint_galahad_pts = item.race_galahad_pts;
-        };        
-      } else {
-        if (!item.gp_name.includes('Sprint')) {
-          gp_flags.push(item.gp_flag);
-          gp_names.push(item.gp_flag + " " + item.gp_name);
-          race_gauvain_pts.push(null);
-          race_galahad_pts.push(null);
+            race_gauvain_pts.push(null);
+            race_galahad_pts.push(null);
         }
-      }
-    });
-
-    const championship_gauvain_pts = arraySum(race_gauvain_pts);
-    const championship_galahad_pts = arraySum(race_galahad_pts);
-
-    function arraySum (originalArray) {
-      let accumulatedArray = [];
-      let sum = 0;
-      for (let i = 0; i < originalArray.length; i++) {
-        if (originalArray[i] === null) {
-          accumulatedArray.push(null);
-        } else {
-          sum += originalArray[i];
-          accumulatedArray.push(sum);
-        }
-      }
-      return accumulatedArray;
     }
+});
+
+const championship_gauvain_pts = arraySum(race_gauvain_pts);
+const championship_galahad_pts = arraySum(race_galahad_pts);
+
+function arraySum(originalArray) {
+    let accumulatedArray = [];
+    let sum = 0;
+    for (let i = 0; i < originalArray.length; i++) {
+        if (originalArray[i] === null) {
+            accumulatedArray.push(null);
+        } else {
+            sum += originalArray[i];
+            accumulatedArray.push(sum);
+        }
+    }
+    return accumulatedArray;
+}
 
 
 
 
-
-    // Configuration du premier graphique
-    const optionsRaces = {
-      chart: {
+// Configuration du premier graphique
+const optionsRaces = {
+    chart: {
         type: 'line',
         id: 'chartRaces',
         group: 'timeline',
         height: 350,
         fontFamily: "Lexend, sans-serif",
         toolbar: {
-          show: false
+            show: false
         },
         zoom: {
-          enabled: false
+            enabled: false
         },
-      },
-      series: [
-        {
-          name: "Gauvain",
-          color: "#9CA3AF",
-          data: race_gauvain_pts,
-          zIndex: 1
+    },
+    series: [{
+            name: "Gauvain",
+            color: "#9CA3AF",
+            data: race_gauvain_pts,
+            zIndex: 1
         },
         {
-          name: "Galahad",
-          color: "#c81e1e",
-          data: race_galahad_pts,
-          hidden: false,
-          zIndex: 0
+            name: "Galahad",
+            color: "#c81e1e",
+            data: race_galahad_pts,
+            hidden: false,
+            zIndex: 0
         }
-      ],
-      xaxis: {
+    ],
+    xaxis: {
         categories: gp_names,
         overwriteCategories: gp_flags,
         tooltip: {
-          enabled: false
-        },        
+            enabled: false
+        },
         labels: {
-          // show: false,
-          rotate: 0,
-          hideOverlappingLabels: false,
-          trim: true,
-          style: {
-            // fontSize: '8px'
-          }
+            // show: false,
+            rotate: 0,
+            hideOverlappingLabels: false,
+            trim: true,
+            style: {
+                // fontSize: '8px'
+            }
         },
         tickPlacement: 'on',
         axisBorder: {
-          show: false
+            show: false
         },
         axisTicks: {
-          show: false
+            show: false
         }
         // title: {
         //   text: 'GP Flags'
         // }
-      },
-      yaxis: {
+    },
+    yaxis: {
         labels: {
-          // show: false,
-          // formatter: function (value) {
-          //     return value + ' pts';
-          // },
-          style: {
-            colors: ['#90A4AE']
-          },
-          offsetX: -12
+            // show: false,
+            // formatter: function (value) {
+            //     return value + ' pts';
+            // },
+            style: {
+                colors: ['#90A4AE']
+            },
+            offsetX: -12
         },
         // title: {
         //   text: 'Points'
         // }
-      },
-      stroke: {
+    },
+    stroke: {
         show: true,
         width: 6,
         curve: 'monotoneCubic',
         lineCap: 'round',
-      },
-      tooltip: {
+    },
+    tooltip: {
         shared: true,
         y: {
-          formatter: function(value) {
-              if (value < 2) return value + " point";
-              else return value + " points";
-          },
-          title: {
-              formatter: (seriesName) => seriesName + " :",
-          },
+            formatter: function(value) {
+                if (value < 2) return value + " point";
+                else return value + " points";
+            },
+            title: {
+                formatter: (seriesName) => seriesName + " :",
+            },
         }
-      },
-      markers: {
+    },
+    markers: {
         size: 0,
         colors: undefined,
         strokeWidth: 2,
-      },
-      grid: {
+    },
+    grid: {
         strokeDashArray: 6,
         padding: {
-          left: 0,
-          top: -12
+            left: 0,
+            top: -12
         }
-      },
-      // dataLabels: {
-      //   enabled: true,
-      // },
-      responsive: [{
+    },
+    // dataLabels: {
+    //   enabled: true,
+    // },
+    responsive: [{
         breakpoint: 550,
         options: {
-          xaxis: {
-            labels: {
-              show: false
+            xaxis: {
+                labels: {
+                    show: false
+                }
+            },
+            grid: {
+                padding: {
+                    right: 0
+                }
             }
-          },
-          grid: {
-            padding: {
-              right: 0
-            }
-          }
         }
-      }],
-      plotOptions: {
+    }],
+    plotOptions: {
         bar: {
-          horizontal: false,
-          borderRadius: 3,
-          borderRadiusApplication: 'end',
-          borderRadiusWhenStacked: 'last',
-          columnWidth: '70%',
-          barHeight: '70%',
-          dataLabels: {
-            position: 'top'
-          }
+            horizontal: false,
+            borderRadius: 3,
+            borderRadiusApplication: 'end',
+            borderRadiusWhenStacked: 'last',
+            columnWidth: '70%',
+            barHeight: '70%',
+            dataLabels: {
+                position: 'top'
+            }
         }
-      }
-    };
+    }
+};
 
 
 
 
-
-    // Configuration du deuxième graphique
-    const optionsChampionship = {
-      chart: {
+// Configuration du deuxième graphique
+const optionsChampionship = {
+    chart: {
         type: 'area',
         id: 'chartChampionship',
         group: 'timeline',
@@ -788,129 +720,126 @@ swiper.slideTo(slideIndex, 2000);
         stacked: false,
         fontFamily: "Lexend, sans-serif",
         toolbar: {
-          show: false
+            show: false
         },
         zoom: {
-          enabled: false,
-          autoScaleYaxis: true
+            enabled: false,
+            autoScaleYaxis: true
         },
         events: {
-          // Synchronisation des deux graphiques
-          selection: function (chart, e) {
-            const selectedData = e.xaxis;
-            chart1.updateOptions({
-              xaxis: {
-                min: selectedData.min,
-                max: selectedData.max
-              }
-            });
-          }
+            // Synchronisation des deux graphiques
+            selection: function(chart, e) {
+                const selectedData = e.xaxis;
+                chart1.updateOptions({
+                    xaxis: {
+                        min: selectedData.min,
+                        max: selectedData.max
+                    }
+                });
+            }
         }
-      },
-      series: [
-        {
-          name: "Gauvain",
-          color: "#9CA3AF",
-          data: championship_gauvain_pts,
-          zIndex: 1
+    },
+    series: [{
+            name: "Gauvain",
+            color: "#9CA3AF",
+            data: championship_gauvain_pts,
+            zIndex: 1
         },
         {
-          name: "Galahad",
-          color: "#c81e1e",
-          data: championship_galahad_pts,
-          zIndex: 0
+            name: "Galahad",
+            color: "#c81e1e",
+            data: championship_galahad_pts,
+            zIndex: 0
         }
-      ],
-      dataLabels: {
+    ],
+    dataLabels: {
         enabled: false,
-      },
-      fill: {
+    },
+    fill: {
         type: "gradient",
         gradient: {
-          opacityFrom: 0.5,
-          opacityTo: 0,
-          // shade: "#c81e1e",
-          // gradientToColors: ["#9CA3AF", "#c81e1e"],
+            opacityFrom: 0.5,
+            opacityTo: 0,
+            // shade: "#c81e1e",
+            // gradientToColors: ["#9CA3AF", "#c81e1e"],
         },
-      },
-      xaxis: {
+    },
+    xaxis: {
         categories: gp_names,
         overwriteCategories: gp_flags,
         labels: {
-          // show: false,
-          rotate: 0,
-          hideOverlappingLabels: false,
-          trim: true,
+            // show: false,
+            rotate: 0,
+            hideOverlappingLabels: false,
+            trim: true,
         },
         tooltip: {
-          enabled: false
+            enabled: false
         },
         axisBorder: {
-          show: false
+            show: false
         },
         axisTicks: {
-          show: false
+            show: false
         }
         // title: {
         //   text: 'GP Flags'
         // }
-      },
-      yaxis: {
+    },
+    yaxis: {
         labels: {
-          // show: false,
-          // formatter: function (value) {
-          //     return value + ' pts';
-          // },
-          style: {
-            colors: ['#90A4AE']
-          },
-          offsetX: -12
+            // show: false,
+            // formatter: function (value) {
+            //     return value + ' pts';
+            // },
+            style: {
+                colors: ['#90A4AE']
+            },
+            offsetX: -12
         },
         // title: {
         //   text: 'Points Totaux'
         // }
-      },
-      tooltip: {
+    },
+    tooltip: {
         shared: true,
         y: {
-          formatter: function(value) {
-            if (value < 2) return value + " point";
-            else return value + " points";
-          },
-          title: {
-              formatter: (seriesName) => seriesName + " :",
-          },
+            formatter: function(value) {
+                if (value < 2) return value + " point";
+                else return value + " points";
+            },
+            title: {
+                formatter: (seriesName) => seriesName + " :",
+            },
         }
-      },
-      stroke: {
+    },
+    stroke: {
         width: 6,
         curve: 'monotoneCubic',
         lineCap: 'round'
-      },
-      grid: {
+    },
+    grid: {
         strokeDashArray: 6,
         padding: {
-          left: 0,
-          top: -12
+            left: 0,
+            top: -12
         }
-      },
-      responsive: [{
+    },
+    responsive: [{
         breakpoint: 550,
         options: {
-          xaxis: {
-            labels: {
-              show: false
+            xaxis: {
+                labels: {
+                    show: false
+                }
             }
-          }
         }
-      }]
-    };
+    }]
+};
 
-    // Initialisation des graphiques
-    const chartRaces = new ApexCharts(document.querySelector('#chart-races'), optionsRaces);
-    const chartChampionship = new ApexCharts(document.querySelector('#chart-championship'), optionsChampionship);
+// Initialisation des graphiques
+const chartRaces = new ApexCharts(document.querySelector('#chart-races'), optionsRaces);
+const chartChampionship = new ApexCharts(document.querySelector('#chart-championship'), optionsChampionship);
 
-    chartRaces.render();
-    chartChampionship.render();
-
-    chartRaces.zoomX(0,1);
+chartRaces.render();
+chartChampionship.render();
