@@ -704,7 +704,7 @@ swiper.slideTo(slideIndex, 2000);
           style: {
             colors: ['#90A4AE']
           },
-          offsetX: -19,
+          offsetX: -12
         },
         // title: {
         //   text: 'Points'
@@ -736,7 +736,7 @@ swiper.slideTo(slideIndex, 2000);
       grid: {
         strokeDashArray: 6,
         padding: {
-          left: -5,
+          left: 0,
           top: -12
         }
       },
@@ -864,7 +864,7 @@ swiper.slideTo(slideIndex, 2000);
           style: {
             colors: ['#90A4AE']
           },
-          offsetX: -19
+          offsetX: -12
         },
         // title: {
         //   text: 'Points Totaux'
@@ -890,7 +890,7 @@ swiper.slideTo(slideIndex, 2000);
       grid: {
         strokeDashArray: 6,
         padding: {
-          left: -5,
+          left: 0,
           top: -12
         }
       },
