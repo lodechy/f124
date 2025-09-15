@@ -212,7 +212,7 @@ document.getElementById('totalRoundNb').innerText = totalRaces;
 
 const renderTable = () => {
 
-    document.getElementById('table-loading').remove();
+    if (document.contains(document.getElementById("table-loading"))) document.getElementById('table-loading').remove();
 
     let displayData = filteredData.filter(item => (toggleSprint.checked || !item.gp_name.includes('Sprint')) && (toggleNotDone.checked || item.date));
 
