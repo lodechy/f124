@@ -58,7 +58,6 @@ const data = [
 ];
 const lastRace = data.findLast((item => item.date));
 const nextRace = data.find((item => !item.date));
-// const liveSpan = `<span class="ms-2 px-1 py-0.5 text-white text-xs bg-red-700 rounded-sm">LIVE</span>`;
 const pictureUrlGauvain = 'https://static-cdn.jtvnw.net/jtv_user_pictures/b83e513b-decf-41c9-8f28-aa40b75ec651-profile_image-150x150.png';
 const pictureUrlGalahad = 'https://static-cdn.jtvnw.net/jtv_user_pictures/f4fac690-84cb-4aa7-a515-70c90dc14675-profile_image-150x150.png';
 const twitchChannelGauvain = 'gau20_';
@@ -450,7 +449,7 @@ function renderChampionshipItem(pictureUrl, name, twitchChannel) {
     li.innerHTML = `
         <div class="flex items-center">
             <div class="shrink-0">
-                <img class="w-12 h-12 rounded-full" src="${pictureUrl}" alt="Photo de profil de ${name}">
+                <img class="w-12 h-12 rounded-full" src="${pictureUrl}" alt="Photo ${name}">
             </div>
             <div class="flex-1 min-w-0 ms-4">
                 <p class="flex items-center text-base font-medium text-gray-900 truncate dark:text-white sm:text-lg">                    
