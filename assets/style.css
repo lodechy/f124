@@ -194,3 +194,7 @@ html.dark {
     --swiper-pagination-bullet-size: .6rem !important;
     --swiper-pagination-top: 0;
 }
+
+.track-map {
+    padding-inline: 12%;
+}

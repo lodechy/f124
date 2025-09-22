@@ -519,7 +519,7 @@ displayData.forEach((round, i) => {
         </div>
         <h5 class="text-base sm:text-lg font-semibold text-center tracking-tight text-gray-900 dark:text-gray-100 truncate">${round.gp_flag} ${round.gp_name}</h5>
         <p class="text-center text-sm font-normal text-gray-400 dark:text-gray-500 truncate">${ round.date ? round.date : ` ` }</p>
-        <img class="px-16 mb-8 opacity-90" src="${round.gp_map}" alt="Circuit de ${round.gp_name}" />
+        <img class="track-map mb-8 opacity-90" src="${round.gp_map}" alt="Circuit de ${round.gp_name}" />
       `;
 
     swiperDiv.appendChild(slide);
@@ -541,7 +541,7 @@ var swiper = new Swiper(".mySwiper", {
     breakpoints: {
         550: {
             slidesPerView: 2,
-            centeredSlides: false
+            // centeredSlides: false
         },
         768: {
             slidesPerView: 3,
