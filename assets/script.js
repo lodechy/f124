@@ -58,7 +58,7 @@ const data = [
 ];
 const lastRace = data.findLast((item => item.date));
 const nextRace = data.find((item => !item.date));
-const liveSpan = `<span class="ms-2 px-1 py-0.5 text-white text-xs bg-red-700 rounded-sm">LIVE</span>`;
+// const liveSpan = `<span class="ms-2 px-1 py-0.5 text-white text-xs bg-red-700 rounded-sm">LIVE</span>`;
 const pictureUrlGauvain = 'https://static-cdn.jtvnw.net/jtv_user_pictures/b83e513b-decf-41c9-8f28-aa40b75ec651-profile_image-150x150.png';
 const pictureUrlGalahad = 'https://static-cdn.jtvnw.net/jtv_user_pictures/f4fac690-84cb-4aa7-a515-70c90dc14675-profile_image-150x150.png';
 const twitchChannelGauvain = 'gau20_';
@@ -139,26 +139,24 @@ async function isChannelLive(channelName) {
     }
 }
 
-async function checkLiveStatusAndRender() {
+async function checkLiveStatus() {
     try {
         await Promise.all([
             isChannelLive(twitchChannelGauvain).then(status => {
                 if (status.live) {
-                    isLiveGauvainSpan = liveSpan;
+                    document.getElementById('liveBadgeGauvain').classList.remove('hidden');
                 }
             }),
             isChannelLive(twitchChannelGalahad).then(status => {
                 if (status.live) {
-                    isLiveGalahadSpan = liveSpan;
+                    document.getElementById('liveBadgeGalahad').classList.remove('hidden');
                 }
             })
         ]);
-        renderChampionshipStanding();
     } catch (err) {
         console.error(err);
     }
 }
-checkLiveStatusAndRender();
 
 goToDatatable.addEventListener("click", () => {
     document.querySelector('#datatable').scrollIntoView({
@@ -441,7 +439,9 @@ function renderChampionshipStanding() {
     }
     animateValue("championshipPointsGauvain", 0, championshipPointsGauvain, 1000);
     animateValue("championshipPointsGalahad", 0, championshipPointsGalahad, 1000);
+    checkLiveStatus();
 }
+renderChampionshipStanding();
 
 function renderChampionshipItem(pictureUrl, name, twitchChannel) {
     const li = document.createElement('li');
@@ -453,8 +453,9 @@ function renderChampionshipItem(pictureUrl, name, twitchChannel) {
                 <img class="w-12 h-12 rounded-full" src="${pictureUrl}" alt="Photo de profil de ${name}">
             </div>
             <div class="flex-1 min-w-0 ms-4">
-                <p class="flex items-center text-base font-medium text-gray-900 truncate dark:text-white sm:text-lg">
-                    ${ name }${ (name === "Gauvain") ? isLiveGauvainSpan : isLiveGalahadSpan }
+                <p class="flex items-center text-base font-medium text-gray-900 truncate dark:text-white sm:text-lg">                    
+                    ${ name }
+                    <span id="liveBadge${ name }" class="hidden ms-2 px-1 py-0.5 text-white text-xs bg-red-700 rounded-sm">LIVE</span>
                 </p>
                 <a href="https://www.twitch.tv/${twitchChannel}" target="_blank" class="text-sm text-gray-500 truncate dark:text-gray-400 hover:underline underline-offset-3">twitch.tv/${twitchChannel}</a>
             </div>
