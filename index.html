@@ -38,7 +38,7 @@
 
                 <div class="flex items-center lg:space-x-2 gap-2">
 
-                    <button id="theme-toggle" data-tooltip-target="tooltip-theme" data-tooltip-placement="bottom" type="button" class="inline-flex items-center justify-center cursor-pointer p-2 w-10 h-10 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-700">
+                    <button id="theme-toggle" data-tooltip-target="tooltip-theme" type="button" class="inline-flex items-center justify-center cursor-pointer p-2 w-10 h-10 text-sm text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-700">
                         <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd" d="M13 3a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0V3ZM6.343 4.929A1 1 0 0 0 4.93 6.343l1.414 1.414a1 1 0 0 0 1.414-1.414L6.343 4.929Zm12.728 1.414a1 1 0 0 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-9 4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H3Zm16 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2ZM7.757 17.657a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414Zm9.9-1.414a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM13 19a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0v-2Z" clip-rule="evenodd"></path>
                         </svg>
@@ -433,8 +433,7 @@
         document.getElementById('tooltip-theme-text').innerHTML = "Thème sombre";
         }
         if ('ontouchstart' in window || navigator.maxTouchPoints) {
-            document.getElementById('theme-toggle').removeAttribute('data-tooltip-target');
-            document.getElementById('theme-toggle').removeAttribute('data-tooltip-placement');
+            document.getElementById('tooltip-theme').style = "display: none !important;";
         }
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
